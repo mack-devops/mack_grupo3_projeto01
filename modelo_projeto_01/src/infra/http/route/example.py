@@ -50,7 +50,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data2():
         try:
-            response = apiv.get2()
+            response = apiv.get2(request)
 
             return jsonify(response), 200
         except Exception as err:
