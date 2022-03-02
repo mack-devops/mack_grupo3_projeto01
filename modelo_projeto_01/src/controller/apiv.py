@@ -6,7 +6,7 @@ import os
 pastaLeitura = '/.files/'
 import json
 
-df = pd.read_csv('./src/controller/dataset.csv')
+df = pd.read_csv(pastaLeitura + 'dataset.csv')
 
 try:
     df = pd.read_csv(pastaLeitura + 'dataset.csv')
@@ -17,8 +17,8 @@ df1 = df.groupby('car_make').agg({'car_value':'mean'})
 
 def post():
 
-    pasta = 'files'
-    arquivo = request.files.get("filename")
+    pasta = './files'
+    arquivo = request.files.get("./filename")
     nomeArquivo = arquivo.filename
     arquivo.save(os.path.join(pasta, nomeArquivo))
 
