@@ -7,7 +7,6 @@ pastaLeitura = '/.files/'
 import json
 
 df = pd.read_csv('./src/controller/dataset.csv')
-df1 = df.groupby('car_make').agg({'car_value':'mean'})
 
 try:
     df = pd.read_csv(pastaLeitura + 'dataset.csv')
