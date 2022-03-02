@@ -3,7 +3,6 @@ from flask import jsonify
 import src.controller.apiv as apiv
 import src.infra.http.auth as auth
 from src.infra.utility.http import Http
-import os
 
 
 def route(app: flask.app.Flask):
