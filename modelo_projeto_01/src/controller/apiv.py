@@ -1,8 +1,14 @@
 import pandas as pd
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+from flask import request
+import json
+import os
+>>>>>>> 58e7211 (Update apiv.py)
 import json
 
-df = pd.read_csv(pastaLeitura + 'dataset.csv')
+pastaLeitura = '/.files/'
 
 def post(request):
     response = {
