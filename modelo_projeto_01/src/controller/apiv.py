@@ -3,7 +3,6 @@ import pandas as pd
 import json
 
 df = pd.read_csv('./src/controller/dataset.csv')
-df1 = df.groupby('car_make').agg({'car_value':'mean'})
 
 def post(request):
     response = {
