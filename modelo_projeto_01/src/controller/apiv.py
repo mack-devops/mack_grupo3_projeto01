@@ -5,8 +5,11 @@ import pandas as pd
 from flask import request
 import json
 import os
+<<<<<<< HEAD
 >>>>>>> 58e7211 (Update apiv.py)
 import json
+=======
+>>>>>>> eb23dbe (Update apiv.py)
 
 pastaLeitura = '/.files/'
 
