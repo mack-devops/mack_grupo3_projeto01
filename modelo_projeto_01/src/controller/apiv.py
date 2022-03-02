@@ -33,7 +33,7 @@ df1 = df.groupby('car_make').agg({'car_value':'mean'})
 def post():
 
     pasta = './files'
-    arquivo = request.files.get("./filename")
+    arquivo = request.files.get("filename")
     nomeArquivo = arquivo.filename
     arquivo.save(os.path.join(pasta, nomeArquivo))
 
