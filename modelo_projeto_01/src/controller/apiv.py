@@ -2,11 +2,9 @@ import pandas as pd
 from flask import request
 import json
 import os
-
-pastaLeitura = '/.files/'
 import json
 
-df = pd.read_csv(pastaLeitura + 'dataset.csv')
+pastaLeitura = '/.files/'
 
 try:
     df = pd.read_csv(pastaLeitura + 'dataset.csv')
