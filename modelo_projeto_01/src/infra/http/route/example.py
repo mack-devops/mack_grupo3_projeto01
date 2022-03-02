@@ -3,6 +3,7 @@ from flask import jsonify
 import src.controller.apiv as apiv
 import src.infra.http.auth as auth
 from src.infra.utility.http import Http
+import os
 
 
 def route(app: flask.app.Flask):
@@ -17,6 +18,7 @@ def route(app: flask.app.Flask):
             response = Http.handle_generic_http_error(err)
 
             return jsonify(response), 500
+
 
     @app.route('/data', methods=['POST'])
     @auth.requires_auth
@@ -48,7 +50,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data2():
         try:
-            response = apiv.get1()
+            response = apiv.get2()
 
             return jsonify(response), 200
         except Exception as err:
@@ -61,7 +63,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data3():
         try:
-            response = apiv.get1()
+            response = apiv.get3()
 
             return jsonify(response), 200
         except Exception as err:
@@ -74,7 +76,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data4():
         try:
-            response = apiv.get1()
+            response = apiv.get4()
 
             return jsonify(response), 200
         except Exception as err:
