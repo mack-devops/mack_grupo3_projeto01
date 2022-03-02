@@ -2,7 +2,6 @@ import pandas as pd
 from flask import request
 import json
 import os
-import json
 
 pastaLeitura = '/.files/'
 
