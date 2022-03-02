@@ -18,6 +18,7 @@ try:
     df = pd.read_csv(pastaLeitura + 'dataset.csv')
 except:
     df = pd.read_csv('dataset.csv')
+    
 
 df1 = df.groupby('car_make').agg({'car_value':'mean'})
 
