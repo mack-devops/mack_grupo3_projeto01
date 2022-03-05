@@ -1,7 +1,6 @@
 # MACKENZIE: GIT - GROUP 3 #
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-[Build Status]
 
 ## Abstract ##
 >Criação de API para análise diária de aluguel de carros.
