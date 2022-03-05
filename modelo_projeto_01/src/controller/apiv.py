@@ -33,30 +33,16 @@ def get():
 
 
 def get1():
-<<<<<<< HEAD
+
     df1.to_json('test.json1', orient="records")
     with open('test.json1', encoding='utf-8') as meu_json1:
-=======
-    df1.to_json('./src/controller/test.json1', orient="records")
-    with open('./src/controller/test.json1', encoding='utf-8') as meu_json1:
->>>>>>> 3a7d5f214fa34d4e82867886b7720ca160c25862
         dados = json.load(meu_json1)
     return dados
 
 def get2(request):
-<<<<<<< HEAD
     df.to_json('test.json2', orient="records")
     with open('test.json2', encoding='utf-8') as meu_json2:
-=======
-    filtro = request.json['value']
-    df.to_json('./src/controller/test.json2', orient="records")
-    with open('./src/controller/test.json2', encoding='utf-8') as meu_json2:
-<<<<<<< HEAD
->>>>>>> 3a7d5f214fa34d4e82867886b7720ca160c25862
         dados = json.load(meu_json2)
-=======
-        dados = json.load(meu_json)
->>>>>>> main
     return dados
 
 
