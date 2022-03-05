@@ -1,12 +1,26 @@
 import pandas as pd
+from flask import request
 import json
+import os
 
-df = pd.read_csv('./src/controller/dataset.csv')
+pastaLeitura = '/.files/'
+
+try:
+    df = pd.read_csv(pastaLeitura + 'dataset.csv')
+except:
+    df = pd.read_csv('dataset.csv')
+
 df1 = df.groupby('car_make').agg({'car_value':'mean'})
 
-def post(request):
+def post():
+
+    pasta = './files'
+    arquivo = request.files.get("filename")
+    nomeArquivo = arquivo.filename
+    arquivo.save(os.path.join(pasta, nomeArquivo))
+
     response = {
-        "data": "VALOR RETORNADO PELA CONTROLLER QUANDO A SOLICITAÇÃO FOR POST"
+        "data": "Arquivo Gerado com sucesso !"
     }
     return response
 
@@ -37,9 +51,14 @@ def get2(request):
     filtro = request.json['value']
     df.to_json('./src/controller/test.json2', orient="records")
     with open('./src/controller/test.json2', encoding='utf-8') as meu_json2:
+<<<<<<< HEAD
 >>>>>>> 3a7d5f214fa34d4e82867886b7720ca160c25862
         dados = json.load(meu_json2)
+=======
+        dados = json.load(meu_json)
+>>>>>>> main
     return dados
+
 
 def get3():
     df.to_json('./src/controller/test.json3', orient="records")
@@ -48,7 +67,7 @@ def get3():
     return dados
 
 def get4():
-    df.to_json('./src/controller/test.json4', orient="records")
-    with open('./src/controller/test.json4', encoding='utf-8') as meu_json4:
+    df.to_json('test.json4', orient="records")
+    with open('test.json4', encoding='utf-8') as meu_json4:
         dados = json.load(meu_json4)
     return dados
