@@ -18,13 +18,12 @@ def get():
     return dados
 
 def get1():
-    print(df1)
     df1.to_json('test.json1', orient="records")
     with open('test.json1', encoding='utf-8') as meu_json1:
         dados = json.load(meu_json1)
     return dados
 
-def get2():
+def get2(request):
     df.to_json('test.json2', orient="records")
     with open('test.json2', encoding='utf-8') as meu_json2:
         dados = json.load(meu_json2)
