@@ -46,9 +46,9 @@ def route(app: flask.app.Flask):
 
     @app.route('/data2', methods=['GET'])
     @auth.requires_auth
-    def request_post_data2():
+    def request_post_data2(request):
         try:
-            response = apiv.get1()
+            response = apiv.get2()
 
             return jsonify(response), 200
         except Exception as err:
@@ -61,7 +61,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data3():
         try:
-            response = apiv.get1()
+            response = apiv.get3()
 
             return jsonify(response), 200
         except Exception as err:
@@ -74,7 +74,7 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_data4():
         try:
-            response = apiv.get1()
+            response = apiv.get4()
 
             return jsonify(response), 200
         except Exception as err:
