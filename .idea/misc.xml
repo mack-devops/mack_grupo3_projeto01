@@ -7,5 +7,10 @@
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
+<<<<<<< HEAD
 >>>>>>> 11ebb6a (Commit Theo)
 </project>
+=======
+
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
+>>>>>>> b280a47 (teste)
