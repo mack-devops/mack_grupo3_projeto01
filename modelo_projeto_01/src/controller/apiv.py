@@ -3,17 +3,31 @@ from flask import request
 import json
 import os
 
-pastaLeitura = '/.files/'
+df = pd.read_csv('./files/dataset.csv')
+df1 = df.groupby('car_make').agg({'car_value': 'mean'})
 
-try:
-    df = pd.read_csv(pastaLeitura + 'dataset.csv')
-except:
-    df = pd.read_csv('./files/dataset.csv')
 
-df1 = df.groupby('car_make').agg({'car_value':'mean'})
+def loadJsonTest():
+    df.to_json('./src/controller/test.json', orient="records")
+    with open('./src/controller/test.json', encoding='utf-8') as jason_data:
+        dados = json.load(jason_data)
+    return dados
+
+
+def getAll():
+    data = loadJsonTest()
+    return data
+
+
+def getByIdAndName():
+    data = loadJsonTest()
+    dfIdName = pd.DataFrame.from_dict(data, orient='columns')
+    dfIdName = pd.DataFrame(dfIdName, columns=['id','first_name'])
+    data = dfIdName.to_json(orient='records')
+    return data
+
 
 def post():
-
     pasta = './files'
     arquivo = request.files.get("filename")
     nomeArquivo = arquivo.filename
@@ -23,37 +37,3 @@ def post():
         "data": "Arquivo Gerado com sucesso !"
     }
     return response
-
-
-def get():
-    df.to_json('./src/controller/test.json', orient="records")
-    with open('./src/controller/test.json', encoding='utf-8') as meu_json:
-        dados = json.load(meu_json)
-    return dados
-
-
-def get1():
-
-    df1.to_json('test.json1', orient="records")
-    with open('test.json1', encoding='utf-8') as meu_json1:
-        dados = json.load(meu_json1)
-    return dados
-
-def get2(request):
-    df.to_json('test.json2', orient="records")
-    with open('test.json2', encoding='utf-8') as meu_json2:
-        dados = json.load(meu_json2)
-    return dados
-
-
-def get3():
-    df.to_json('./src/controller/test.json3', orient="records")
-    with open('./src/controller/test.json3', encoding='utf-8') as meu_json3:
-        dados = json.load(meu_json3)
-    return dados
-
-def get4():
-    df.to_json('test.json4', orient="records")
-    with open('test.json4', encoding='utf-8') as meu_json4:
-        dados = json.load(meu_json4)
-    return dados

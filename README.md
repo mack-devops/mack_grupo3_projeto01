@@ -34,31 +34,32 @@ $ pytest
 sudo docker build -t mackenzie-group-x .
 sudo docker run -p 5001:5001 -d mackenzie-group-x
 ```
-_______________________________________________________
+---
 
 ## Methods
 #### [VERBO] - /NomeMetodo 
 
-###  [POST] - **/ImportData** 
+###  [POST] - **/importData** 
 > I.	1 rota deve ser fornecida para importar o arquivo utilizando form-data;
 
 ### [GET] - **/**
 > Metodo padrão - API online
 
-### [GET] - **/GetAll**
+### [GET] - **/getAll**
 > Retorna todos os dados da base
 
-### [GET] - **/GetByIdAndName**
+### [GET] - **/getByIdAndName**
 > II.	1 rota que retornará o ID e o nome de todos os arquivos importados;
 
-### [GET] - **/GetAverageValuebyManufacturer**
+### [GET] - **/getAverageValuebyManufacturer**
 > III.	1 rota que retornará o valor médio de todos os carros baseados no fabricante (coluna car_make agrupada pela média dos valores da coluna car_value);
 
-### [POST] - **/GetAverageValuebyManufacturerFiltredByValue**
+### [POST] - **/getAverageValuebyManufacturerFiltredByValue**
 > IV.	1 rota que retornará o valor médio de um fabricante de carro passado como parâmetro no corpo do request (Após o cálculo de I, pode-se filtrar apenas o valor requerido);
 
-### [GET] - **/GetAverageValueByCity**
+### [GET] - **/getAverageValueByCity**
 > V.	1 rota que retornará o valor médio de todos os carros baseados nas cidades correspondentes (coluna city agrupada pela média dos valores da coluna car_value);
 
-### [POST] - **/GetAverageValueByCityFiltredByValue**
+### [POST] - **/getAverageValueByCityFiltredByValue**
 > VI.	1 rota que retornará o valor médio dos carros de uma cidade passada como parâmetro no corpo do request (Após o cálculo de III, pode-se filtrar apenas o valor requerido).
+---
