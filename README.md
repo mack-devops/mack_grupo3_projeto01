@@ -2,14 +2,14 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 
-## Abstract ##
->Criação de API para análise diária de aluguel de carros.
-Rotas da API:
-1 - Importação de arquivo utilizando form-data
-2 - Retornará o ID e o nome de todos os arquivos importados
-3 - Retornará o valor médio de todos os carros baseados no fabricante
-4 - Retornará o valor médio de todos os carros baseados nas cidades correspondentes
-5 - Retornará o valor médio dos carros de uma cidade passada como parâmetro no Request
+## Abstract
+Criação de API para análise diária de aluguel de carros.
+> Rotas da API:
+* 1 - Importação de arquivo utilizando form-data
+* 2 - Retornará o ID e o nome de todos os arquivos importados
+* 3 - Retornará o valor médio de todos os carros baseados no fabricante
+* 4 - Retornará o valor médio de todos os carros baseados nas cidades correspondentes
+* 5 - Retornará o valor médio dos carros de uma cidade passada como parâmetro no Request
 
 
 ## I. Development Requirements ##
