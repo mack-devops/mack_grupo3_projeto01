@@ -1,6 +1,7 @@
 import pandas as pd
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 from flask import request
 import json
@@ -12,9 +13,30 @@ import json
 >>>>>>> eb23dbe (Update apiv.py)
 
 pastaLeitura = '/.files/'
+=======
+from flask import request
+import json
+import os
 
-def post(request):
+pastaLeitura = '/.files/'
+
+try:
+    df = pd.read_csv(pastaLeitura + 'dataset.csv')
+except:
+    df = pd.read_csv('dataset.csv')
+
+df1 = df.groupby('car_make').agg({'car_value':'mean'})
+>>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
+
+def post():
+
+    pasta = './files'
+    arquivo = request.files.get("filename")
+    nomeArquivo = arquivo.filename
+    arquivo.save(os.path.join(pasta, nomeArquivo))
+
     response = {
+<<<<<<< HEAD
         "data": "VALOR RETORNADO PELA CONTROLLER QUANDO A SOLICITAÇÃO FOR POST"
 =======
 from flask import request
@@ -40,6 +62,9 @@ def post():
     response = {
         "data": "Arquivo Gerado com sucesso !"
 >>>>>>> 407c818 (Theo Branch)
+=======
+        "data": "Arquivo Gerado com sucesso !"
+>>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
     }
     return response
 
@@ -60,6 +85,7 @@ def get1():
     return dados
 
 def get2(request):
+<<<<<<< HEAD
 <<<<<<< HEAD
     filtro = request.json['value']
     df.to_json('./src/controller/test.json2', orient="records")
@@ -86,8 +112,13 @@ def get2():
     df.to_json('test.json2', orient="records")
     with open('test.json2', encoding='utf-8') as meu_json2:
 >>>>>>> 407c818 (Theo Branch)
+=======
+    df.to_json('test.json2', orient="records")
+    with open('test.json2', encoding='utf-8') as meu_json2:
+>>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
         dados = json.load(meu_json2)
     return dados
+
 
 def get3():
 <<<<<<< HEAD
@@ -102,8 +133,13 @@ def get3():
 
 def get4():
 <<<<<<< HEAD
+<<<<<<< HEAD
     df.to_json('./src/controller/test.json4', orient="records")
     with open('./src/controller/test.json4', encoding='utf-8') as meu_json4:
+=======
+    df.to_json('test.json4', orient="records")
+    with open('test.json4', encoding='utf-8') as meu_json4:
+>>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
         dados = json.load(meu_json4)
     return dados
 =======

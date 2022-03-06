@@ -2,6 +2,7 @@
 <project version="4">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (modelo_projeto_01)" project-jdk-type="Python SDK" />
 =======
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8" project-jdk-type="Python SDK" />
@@ -10,6 +11,10 @@
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8" project-jdk-type="Python SDK" />
 
 >>>>>>> b280a47 (teste)
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8" project-jdk-type="Python SDK" />
+
+>>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
