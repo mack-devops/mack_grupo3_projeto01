@@ -18,13 +18,67 @@ from flask import request
 import json
 import os
 
-pastaLeitura = '/.files/'
+df = pd.read_csv('./files/dataset.csv')
 
-try:
-    df = pd.read_csv(pastaLeitura + 'dataset.csv')
-except:
-    df = pd.read_csv('dataset.csv')
+def loadJsonTest():
+    df.to_json('./src/controller/test.json', orient="records")
+    with open('./src/controller/test.json', encoding='utf-8') as jason_data:
+        dados = json.load(jason_data)
+    return dados
 
+
+def getAll():
+    data = loadJsonTest()
+    return data
+
+
+def getByIdAndName():
+    data = loadJsonTest()
+    dfx = pd.DataFrame.from_dict(data, orient='columns')
+    dfx = pd.DataFrame(dfx, columns=['id', 'first_name'])
+    data = dfx.to_json(orient='records')
+    return data
+
+
+def getAverageValuebyManufacturer():
+    data = loadJsonTest()
+    dfx = pd.DataFrame.from_dict(data, orient='columns')
+    dfx = pd.DataFrame(dfx, columns=['car_make', 'car_value'])
+    dfx = dfx.groupby('car_make').agg({'car_value': 'mean'})
+    data = dfx.to_json(orient='records')
+    return data
+
+
+def getAverageValuebyManufacturerFiltredByValue(p_car_make):
+    data = loadJsonTest()
+    dfx = pd.DataFrame.from_dict(data, orient='columns')
+    dfx = pd.DataFrame(dfx, columns=['car_make', 'car_value'])
+    #filtrando por fabricante
+    dfx = dfx.loc[dfx['car_make']== p_car_make]
+    dfx = dfx.groupby('car_make').agg({'car_value': 'mean'})
+    data = dfx.to_json(orient='records')
+    return data
+
+
+def getAverageValueByCity():
+    data = loadJsonTest()
+    dfx = pd.DataFrame.from_dict(data, orient='columns')
+    dfx = pd.DataFrame(dfx, columns=['city', 'car_value'])
+    dfx = dfx.groupby('city').agg({'car_value': 'mean'})
+    data = dfx.to_json(orient='records')
+    return data
+
+def getAverageValueByCityFiltredByValue(p_city):
+    data = loadJsonTest()
+    dfx = pd.DataFrame.from_dict(data, orient='columns')
+    dfx = pd.DataFrame(dfx, columns=['city', 'car_value'])
+    #filtrando por fabricante
+    dfx = dfx.loc[dfx['city']== p_city]
+    dfx = dfx.groupby('city').agg({'car_value': 'mean'})
+    data = dfx.to_json(orient='records')
+    return data
+
+<<<<<<< HEAD
 df1 = df.groupby('car_make').agg({'car_value':'mean'})
 >>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
 
@@ -51,9 +105,10 @@ except:
     
 
 df1 = df.groupby('car_make').agg({'car_value':'mean'})
+=======
+>>>>>>> ae933868a5b93f81e3d4b2f1af65121865c0d113
 
 def post():
-
     pasta = './files'
     arquivo = request.files.get("filename")
     nomeArquivo = arquivo.filename
@@ -67,6 +122,7 @@ def post():
 >>>>>>> 99ffc0d84052008201ba3c1132bc1f4d874f8274
     }
     return response
+<<<<<<< HEAD
 
 
 def get():
@@ -148,3 +204,5 @@ def get4():
         dados = json.load(meu_json4)
     return dados
 >>>>>>> 407c818 (Theo Branch)
+=======
+>>>>>>> ae933868a5b93f81e3d4b2f1af65121865c0d113
